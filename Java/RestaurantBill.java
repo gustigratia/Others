@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 public class RestaurantBill {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
-        DecimalFormat decFormat = new DecimalFormat(".#");
+        DecimalFormat decFormat = new DecimalFormat(".###");
         System.out.println("Program to compute tax");
         System.out.println("----------------------");
         System.out.printf("Enter price of food: $");
@@ -19,9 +19,8 @@ public class RestaurantBill {
         double totalBill = price + tax + tip;
         String taxFormatted = decFormat.format(tax);
         String tipFormatted = decFormat.format(tip);
-        String totalFormatted = decFormat.format(totalBill);
         System.out.println("Tax on food is $" + taxFormatted);
         System.out.println("Tip is $" + tipFormatted);
-        System.out.println("Total price is $" + totalFormatted);
+        System.out.println("Total price is $" + totalBill);
     }
 }
