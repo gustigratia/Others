@@ -111,11 +111,11 @@ public class Main {
         int key = 5;
 
         //shift each character to 5 places right, if more than 25 then it back to 0
-        String k1 = ""+alphabet.charAt((alphabet.indexOf(name.charAt(0)) + key) % 25);
-        String k2 = ""+alphabet.charAt((alphabet.indexOf(name.charAt(1)) + key) % 25);
-        String k3 = ""+alphabet.charAt((alphabet.indexOf(name.charAt(2)) + key) % 25);
-        String k4 = ""+alphabet.charAt((alphabet.indexOf(name.charAt(3)) + key) % 25);
-        String k5 = ""+alphabet.charAt((alphabet.indexOf(name.charAt(4)) + key) % 25);
+        String k1 = ""+alphabet.charAt((alphabet.indexOf(name.charAt(0)) + key) % 26);
+        String k2 = ""+alphabet.charAt((alphabet.indexOf(name.charAt(1)) + key) % 26);
+        String k3 = ""+alphabet.charAt((alphabet.indexOf(name.charAt(2)) + key) % 26);
+        String k4 = ""+alphabet.charAt((alphabet.indexOf(name.charAt(3)) + key) % 26);
+        String k5 = ""+alphabet.charAt((alphabet.indexOf(name.charAt(4)) + key) % 26);
 
 
         //change the first character to upper case
