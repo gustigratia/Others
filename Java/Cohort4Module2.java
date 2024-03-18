@@ -6,8 +6,8 @@ public class Main {
         task1("Rahman Arif/17-02-2003/Jakarta/M/A/WNI/Single");
         task1("Alice Rebecca/17-03-1984/London/F/O/WNA/Married");
         task2("Wanda");
-        //task3();
-        //task4("5,8,9,11,10");
+        task3();
+        task4("5,8,9,11,10");
     }
     
     public static String task1(String data){
@@ -132,64 +132,79 @@ public class Main {
     }
     
     public static void task3(){
-        
+
         //declare and initialize the variables
-        
+
         int priceOfCoffee = 15000;
-        ___ priceOfTea = ___;
-        ___ priceOfPizza = ___;
-        ___ currency = ___;
-        int ___ = 3;
-        int numOfTea = ___;
-        ___ numOfPizza = ___ 
-        ___ nameOfCustomer = ___
-        
-        double discountOfCoffee = ___;
-        ___ discountOfTea = 0.15;
-        ___ discountOfPizza = ___
-        double ___ = ___;
-        double cashInHand = ___
-        
+        int priceOfTea = 10000;
+        int priceOfPizza = 45000;
+        String currency = "$";
+        int numOfCoffee = 3;
+        int numOfTea =  5;
+        int numOfPizza = 1;
+        String nameOfCustomer = "Albert";
+
+        double discountOfCoffee = priceOfCoffee*0.1;
+        double discountOfTea = priceOfTea*0.15;
+        double discountOfPizza = priceOfPizza*0.05;
+        double coffee = (priceOfCoffee - discountOfCoffee)*numOfCoffee;
+        double tea = (priceOfTea - discountOfTea)*numOfTea;
+        double pizza = (priceOfPizza - discountOfPizza)*numOfPizza;
+        double cashInHand = 200000;
+
         // count number of items
-        int numOfItems = ___;
+        int numOfItems = numOfPizza + numOfCoffee + numOfTea;
 
         // count the total price
-        ___ totalPrice = ___;
+        double totalPrice = coffee + tea + pizza;
+        double tax = 0.11;
         // count the total price after tax
-        double totalPriceAfterTax = ___;
+        double totalPriceAfterTax = totalPrice + (tax*totalPrice);
         // print total price
-        SYstem.out.println("Total Price: "+ ___ + totalPrice);
-        
-        // count the change 
-        double change = ___
+        System.out.println("Total Price: "+ currency + totalPrice);
+
+        // count the change
+        double change = cashInHand - totalPriceAfterTax;
         //printing the change
-        System.Out.println("Change: "___);
+        System.out.println("Change: " + currency + change);
 
         // count amount of donation
-        ___ donation = ___;
-        System.out.Println("Donation: "+ ___);
+        double donation = change % 1000;
+        System.out.println("Donation: "+ currency + donation);
 
-         
+
         // print the receipt
         System.out.println("-----------------------------------\n");
-        System.out.println("Name Of Customer: "+___);
-        System.out.println("___");
-        System.out.println(___ + ___);
-        System.out.printlN("___ \t|\t" + numOfTea + "\t|\t"  + ___);
-        System.out.println("___\t|\t" + numOfCoffee + "\t|\t"  + ___);
-        System.out.println("Pizza\t|\t" + numOfPizza + "\t|\t"  + ___);
-        System.out.println("Total Before Tax: "+ ___
-        System.out.println("Tax: " + ___ + ___);
-        System.out.println("___ "+ ___);
-        System.out.println("Amount Paid: "+ ___;
-        System.out.println("Change: " + ___
-        ___
-        ___
+        System.out.println("Name Of Customer: "+nameOfCustomer);
+        System.out.println("ORDERS");
+        System.out.println("Number of items: " + numOfItems);
+        System.out.println("Tea\t\t|\t" + numOfTea + "\t|\t"  + tea);
+        System.out.println("Coffee\t|\t" + numOfCoffee + "\t|\t"  + coffee);
+        System.out.println("Pizza\t|\t" + numOfPizza + "\t|\t"  + pizza);
+        System.out.println("Total Before Tax: "+ currency + totalPrice);
+        System.out.println("Tax: " + tax*100 + "%");
+        System.out.println("Total after tax: "+ currency + totalPriceAfterTax);
+        System.out.println("Amount Paid: "+ currency + cashInHand);
+        System.out.println("Change: " + currency + change);
+        System.out.println("Donation Amount: " + currency + donation);
+        System.out.println("\n-----------------------------------");
     }
-    
-    public static void task4(String row){
-        // Your code goes here
-        // ...
-        
+
+    public static void task4(String input){
+        int comma = input.indexOf(",");
+        double num1 = Double.parseDouble(input.substring(0,comma));
+        input = input.substring(comma+1);
+        comma = input.indexOf(",");
+        double num2 = Double.parseDouble(input.substring(0,comma));
+        input = input.substring(comma+1);
+        comma = input.indexOf(",");
+        double num3 = Double.parseDouble(input.substring(0,comma));
+        input = input.substring(comma+1);
+        comma = input.indexOf(",");
+        double num4 = Double.parseDouble(input.substring(0,comma));
+        input = input.substring(comma+1);
+        double num5 = Double.parseDouble(input.substring(0));
+        double result = (num1 + num2 + num3 + num4 + num5)/5;
+        System.out.println(result);
     }
 }
