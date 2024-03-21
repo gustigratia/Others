@@ -190,21 +190,33 @@ public class Main {
         System.out.println("\n-----------------------------------");
     }
 
-    public static void task4(String input){
-        int comma = input.indexOf(",");
-        double num1 = Double.parseDouble(input.substring(0,comma));
-        input = input.substring(comma+1);
-        comma = input.indexOf(",");
-        double num2 = Double.parseDouble(input.substring(0,comma));
-        input = input.substring(comma+1);
-        comma = input.indexOf(",");
-        double num3 = Double.parseDouble(input.substring(0,comma));
-        input = input.substring(comma+1);
-        comma = input.indexOf(",");
-        double num4 = Double.parseDouble(input.substring(0,comma));
-        input = input.substring(comma+1);
-        double num5 = Double.parseDouble(input.substring(0));
-        double result = (num1 + num2 + num3 + num4 + num5)/5;
-        System.out.println(result);
+    public static void task4(String NumberOp){
+        int add = NumberOp.indexOf("+");
+        int num1 = Integer.parseInt(NumberOp.substring(0,add));
+        int num2 = Integer.parseInt(NumberOp.substring(add+1));
+        int result = (num1 + num2) % 100;
+        String resstr = "" + result;
+        String left = resstr.substring(0,1);
+        String right = resstr.substring(1);
+        left = left.replace("2", " twenty");
+        left = left.replace("3", " thirty");
+        left = left.replace("4", " fourty");
+        left = left.replace("5", " fifty");
+        left = left.replace("6", " sixty");
+        left = left.replace("7", " seventy");
+        left = left.replace("8", " eighty");
+        left = left.replace("9", " ninety");
+        right = right.replace("0", "");
+        right = right.replace("1", " one");
+        right = right.replace("2", " two");
+        right = right.replace("3", " three");
+        right = right.replace("4", " four");
+        right = right.replace("5", " five");
+        right = right.replace("6", " six");
+        right = right.replace("7", " seven");
+        right = right.replace("8", " eight");
+        right = right.replace("9", " nine");
+        String output = "one hundred and" + left + right;
+        System.out.println(output);
     }
 }
