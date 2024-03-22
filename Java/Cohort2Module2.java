@@ -7,7 +7,7 @@ public class Main {
         task1("Alice Rebecca/17-03-1984/London/F/O/WNA/Married");
         task2("Wanda");
         task3();
-        task4("Outside is warm");
+        task4("Eat and Tea");
     }
     
     public static String task1(String data){
@@ -192,15 +192,24 @@ public class Main {
 
     public static void task4(String input){
         int space1 = input.indexOf(" ");
-        String word1 = input.substring(0, space1);
+        String word1 = input.substring(0,space1);
         int space2 = input.indexOf(" ", space1+1);
         String word2 = input.substring(space2+1);
-        word1 = word1.toLowerCase();
-        String capital = word2.substring(0,1);
-        capital = capital.toUpperCase();
-        word2 = capital + word2.substring(1);
-
-        String output = word2 + " is " + word1;
+        String word1low = word1.toLowerCase();
+        String word2low = word2.toLowerCase();
+        int let1 = word2low.indexOf(word1low.charAt(0));
+        int let2 = word2low.indexOf(word1low.charAt(1));
+        int let3 = word2low.indexOf(word1low.charAt(2));
+        int total = let1 + let2 + let3;
+        String totalstr = "" + total;
+        String output = "is " + word1 + " and " + word2 + " Anagram? " + totalstr;
+        output = output.replace("-1", "No, it is not.");
+        output = output.replace("-2", "No, it is not.");
+        output = output.replace("-3", "No, it is not.");
+        output = output.replace("3", "Yes, it is.");
+        output = output.replace("2", "No, it is not.");
+        output = output.replace("1", "No, it is not.");
+        output = output.replace("0", "No, it is not.");
         System.out.println(output);
     }
 }
